@@ -18,6 +18,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   // return an object of methods you'd like 
   // to dispatch as redux actions
+  return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

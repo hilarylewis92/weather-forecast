@@ -14,7 +14,7 @@ const store = createStore(
   combineReducers({
     weatherApp: reducer,
   }),
-  {},
+  {}, // initial state object
   applyMiddleware(...middleware)
 )
 
