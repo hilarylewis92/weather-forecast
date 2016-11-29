@@ -5,11 +5,12 @@ import Header from '../components/Header'
 
 class App extends Component {
   render() {
+    console.log(this.props);
     return (
-      <div>
+      <article>
         <Header />
         {this.props.children}
-      </div>
+      </article>
     )
   }
 }

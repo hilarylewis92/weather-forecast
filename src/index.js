@@ -8,6 +8,8 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import reducer from './reducers';
 
+import fetchCurrentLocationForecast from './actions/index'
+
 const middleware = [thunk, createLogger];
 
 const store = createStore(
@@ -24,3 +26,5 @@ render(
   </Provider>,
   document.getElementById('root')
 )
+
+store.dispatch(fetchCurrentLocationForecast)
