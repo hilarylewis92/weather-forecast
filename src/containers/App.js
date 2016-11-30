@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Header from '../components/Header'
+
 class App extends Component {
   render() {
+    console.log(this.props);
     return (
-      <div>Hey!</div>
+      <article>
+        <Header />
+        {this.props.children}
+      </article>
     )
   }
 }
@@ -16,7 +22,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  // return an object of methods you'd like 
+  // return an object of methods you'd like
   // to dispatch as redux actions
   return {};
 }
