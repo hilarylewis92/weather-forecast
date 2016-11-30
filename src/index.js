@@ -1,24 +1,20 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router';
 import Routes from './routes';
 import thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
-import reducer from './reducers';
+import RootReducer from './reducers/RootReducer';
 
 
-const middleware = [thunk, createLogger];
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  combineReducers({
-    weatherApp: reducer,
-  }),
-  {}, // initial state object
+  RootReducer,
+  {},
   composeEnhancers(
-  applyMiddleware(...middleware)
+    applyMiddleware(thunk)
   )
 )
 

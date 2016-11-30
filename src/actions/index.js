@@ -1,4 +1,9 @@
+// require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 export const RECEIVE_FORECAST = 'RECEIVE_FORECAST';
+
+const apiKey = '6258be8435d18786dff892f30b54a00e'
 
 export const receiveForecast = (forecastData) => ({
   // action object
@@ -8,18 +13,20 @@ export const fetchForecast = options => dispatch => {
   // return fetch API call by zip
 };
 
-export const fetchCurrentLocationForecast = options => dispatch => {
+export const fetchCurrentLocationForecast = ( position ) => {
   // return fetch API call by goelocation
-  console.log('test');
-  let localForecast;
-  navigator.geolocation.getCurrentPosition((position) => {
-    localForecast = position.coords.latitude;
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
 
-    return (dispatch)=>{
-      dispatch({
-        type: 'GET_LOCAL_FORECAST',
-        localForecast
-      })
-    }
-  })
+  return (dispatch) => {
+
+    return fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${apiKey}&units=imperial`)
+      .then(weather => weather.json())
+      .then((weatherInfo) => {
+        console.log(weatherInfo);
+        console.log(dispatch)
+        dispatch({type: 'SET_LOCAL_WEATHER', weatherInfo})
+      }
+    )
+  }
 };
