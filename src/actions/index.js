@@ -1,3 +1,6 @@
+// require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 export const RECEIVE_FORECAST = 'RECEIVE_FORECAST';
 
 const apiKey = '6258be8435d18786dff892f30b54a00e'
@@ -17,13 +20,13 @@ export const fetchCurrentLocationForecast = ( position ) => {
 
   return (dispatch) => {
 
-    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${apiKey}&units=imperial`)
-      .then((weather) => {
-          return weather.json()
-      } ).then((weatherInfo) => {
+    return fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${apiKey}&units=imperial`)
+      .then(weather => weather.json())
+      .then((weatherInfo) => {
         console.log(weatherInfo);
+        console.log(dispatch)
         dispatch({type: 'SET_LOCAL_WEATHER', weatherInfo})
       }
-      )
+    )
   }
 };

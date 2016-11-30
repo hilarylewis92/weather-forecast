@@ -11,9 +11,7 @@ class App extends Component {
     navigator.geolocation.getCurrentPosition((position) => {
       // localForecast = position.coords.latitude;
       //call action to fetch current weather
-      console.log(position);
       return this.props.fetchCurrentLocationForecast(position)
-      // console.log(position.coords.latitude, position.coords.longitude)
     });
   }
   testCurrentLocation(){
