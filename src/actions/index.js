@@ -13,7 +13,7 @@ export const fetchForecast = options => dispatch => {
   // return fetch API call by zip
 };
 
-export const fetchCurrentLocationForecast = ( position ) => {
+export const fetchCurrentLocationWeather = ( position ) => {
   // return fetch API call by goelocation
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
@@ -26,6 +26,24 @@ export const fetchCurrentLocationForecast = ( position ) => {
         console.log(weatherInfo);
         console.log(dispatch)
         dispatch({type: 'SET_LOCAL_WEATHER', weatherInfo})
+      }
+    )
+  }
+};
+
+export const fetchCurrentLocationForecast = ( position ) => {
+  // return fetch API call by goelocation
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
+
+  return (dispatch) => {
+
+    return fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=${apiKey}&units=imperial`)
+      .then(weather => weather.json())
+      .then((weatherInfo) => {
+        console.log(weatherInfo);
+        console.log(dispatch)
+        dispatch({type: 'SET_LOCAL_FORECAST', weatherInfo})
       }
     )
   }

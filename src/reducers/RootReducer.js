@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
 import LocalWeatherReducer from './LocalWeatherReducer'
+import LocalForecastReducer from './LocalForecastReducer'
 
 const RootReducer = combineReducers({
-  LocalWeatherReducer
+  LocalWeatherReducer,
+  LocalForecastReducer
 })
 
 export default RootReducer;
