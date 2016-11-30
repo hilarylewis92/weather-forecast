@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { fetchCurrentLocationWeather, fetchCurrentLocationForecast } from '../actions/index'
+import { fetchCurrentLocationWeather, fetchCurrentLocationForecast, fetchPinnedLocationWeather, fetchPinnedLocationForecast } from '../actions/index'
 
 import Header from '../containers/Header'
 
@@ -12,20 +12,21 @@ class App extends Component {
       this.props.fetchCurrentLocationWeather(position)
       this.props.fetchCurrentLocationForecast(position)
     })
-}
-  testCurrentLocation(){
-    console.log('test');
-    this.getCurrentLocation();
   }
+
+  getPinnedLocation() {
+    this.props.fetchPinnedLocationWeather()
+    this.props.fetchPinnedLocationForecast()
+  }
+
   componentDidMount(){
-    // this.props.fetchCurrentLocationForecast()
     this.getCurrentLocation();
+    this.getPinnedLocation();
   }
   render() {
     return (
       <article>
         <Header />
-        <button onClick={this.testCurrentLocation.bind(this)}>Test</button>
         {this.props.children}
       </article>
     )
@@ -38,10 +39,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  // return an object of methods you'd like
-  // to dispatch as redux actions
-  return bindActionCreators({fetchCurrentLocationWeather, fetchCurrentLocationForecast}, dispatch);
-  // return {test}
+  return bindActionCreators({fetchCurrentLocationWeather, fetchCurrentLocationForecast, fetchPinnedLocationWeather, fetchPinnedLocationForecast}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
