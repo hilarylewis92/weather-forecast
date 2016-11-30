@@ -54,8 +54,21 @@ export const fetchPinnedLocationWeather = ( position ) => {
     return fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&APPID=${apiKey}&units=imperial`)
       .then(weather => weather.json())
       .then((weatherInfo) => {
-        console.log(weatherInfo);
         dispatch({type: 'SET_PINNED_WEATHER', weatherInfo})
+      }
+    )
+  }
+};
+
+export const fetchPinnedLocationForecast = ( position ) => {
+  var id = 5419384;
+  return (dispatch) => {
+
+    return fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=${apiKey}&units=imperial`)
+      .then(weather => weather.json())
+      .then((weatherInfo) => {
+        console.log(weatherInfo)
+        dispatch({type: 'SET_PINNED_FORECAST', weatherInfo})
       }
     )
   }
