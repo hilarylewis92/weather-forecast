@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 import App from './containers/App';
 import Dashboard from './components/Dashboard';
 import Settings from './components/Settings';
-import ExtendedForecast from './components/ExtendedForecast';
+import ExtendedForecast from './containers/ExtendedForecast';
 
 const Routes = (props) => (
   <Router {...props}>
