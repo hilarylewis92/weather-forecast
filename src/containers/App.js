@@ -7,9 +7,17 @@ import {fetchCurrentLocationForecast} from '../actions/index'
 import Header from '../components/Header'
 
 class App extends Component {
-  
+  getCurrentLocation(){
+    navigator.geolocation.getCurrentPosition((position) => {
+      // localForecast = position.coords.latitude;
+      //call action to fetch current weather
+      return this.props.fetchCurrentLocationForecast(position)
+      // console.log(position.coords.latitude, position.coords.longitude)
+    });
+  }
   componentWillMount(){
     // this.props.fetchCurrentLocationForecast()
+    this.getCurrentLocation();
   }
   render() {
     console.log(this.props);

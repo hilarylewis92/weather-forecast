@@ -1,7 +1,8 @@
 const exampleReducer = (state = {}, action) => {
-  console.log(action.localForecast);
+  console.log(action);
+  console.log('test');
   switch (action.type) {
-    case 'GET_LOCAL_FORECAST':
+    case 'SET_LOCAL_FORECAST':
       return action.localForecast
     default:
       return state
