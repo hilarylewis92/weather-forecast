@@ -8,16 +8,18 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import reducer from './reducers';
 
-import fetchCurrentLocationForecast from './actions/index'
 
 const middleware = [thunk, createLogger];
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 
 const store = createStore(
   combineReducers({
     weatherApp: reducer,
   }),
   {}, // initial state object
+  composeEnhancers(
   applyMiddleware(...middleware)
+  )
 )
 
 render(
@@ -26,5 +28,3 @@ render(
   </Provider>,
   document.getElementById('root')
 )
-
-store.dispatch(fetchCurrentLocationForecast)
