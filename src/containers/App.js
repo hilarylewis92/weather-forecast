@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { fetchCurrentLocationWeather, fetchCurrentLocationForecast } from '../actions/index'
+import { fetchCurrentLocationWeather, fetchCurrentLocationForecast, fetchPinnedLocationWeather } from '../actions/index'
 
 import Header from '../containers/Header'
 
@@ -17,9 +17,13 @@ class App extends Component {
     console.log('test');
     this.getCurrentLocation();
   }
+  getPinnedLocation() {
+    return this.props.fetchPinnedLocationWeather();
+  }
   componentDidMount(){
     // this.props.fetchCurrentLocationForecast()
     this.getCurrentLocation();
+    this.getPinnedLocation();
   }
   render() {
     return (
@@ -40,7 +44,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
   // return an object of methods you'd like
   // to dispatch as redux actions
-  return bindActionCreators({fetchCurrentLocationWeather, fetchCurrentLocationForecast}, dispatch);
+  return bindActionCreators({fetchCurrentLocationWeather, fetchCurrentLocationForecast, fetchPinnedLocationWeather}, dispatch);
   // return {test}
 }
 
