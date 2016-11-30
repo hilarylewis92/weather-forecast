@@ -20,6 +20,10 @@ export const fetchCurrentLocationForecast = ( position ) => {
     fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${apiKey}&units=imperial`)
       .then((weather) => {
           return weather.json()
-      } ).then(weatherInfo => dispatch({type: 'SET_LOCAL_WEATHER', weatherInfo}))
+      } ).then((weatherInfo) => {
+        console.log(weatherInfo);
+        dispatch({type: 'SET_LOCAL_WEATHER', weatherInfo})
+      }
+      )
   }
 };

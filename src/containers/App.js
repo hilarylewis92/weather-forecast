@@ -11,19 +11,24 @@ class App extends Component {
     navigator.geolocation.getCurrentPosition((position) => {
       // localForecast = position.coords.latitude;
       //call action to fetch current weather
+      console.log(position);
       return this.props.fetchCurrentLocationForecast(position)
       // console.log(position.coords.latitude, position.coords.longitude)
     });
   }
-  componentWillMount(){
+  testCurrentLocation(){
+    console.log('test');
+    this.getCurrentLocation();
+  }
+  componentDidMount(){
     // this.props.fetchCurrentLocationForecast()
     this.getCurrentLocation();
   }
   render() {
-    console.log(this.props);
     return (
       <article>
         <Header />
+        <button onClick={this.testCurrentLocation.bind(this)}>Test</button>
         {this.props.children}
       </article>
     )
@@ -35,11 +40,7 @@ const mapStateToProps = state => {
   return {};
 }
 
-function test(){
-  console.log('this is a test');
-}
-
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   // return an object of methods you'd like
   // to dispatch as redux actions
   return bindActionCreators({fetchCurrentLocationForecast}, dispatch);
