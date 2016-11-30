@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+
+import {fetchCurrentLocationForecast} from '../actions/index'
 
 import Header from '../components/Header'
 
 class App extends Component {
+  
+  componentWillMount(){
+    // this.props.fetchCurrentLocationForecast()
+  }
   render() {
     console.log(this.props);
     return (
@@ -16,15 +23,19 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  // return an object of redux store data
-  // that you'd like available in your component
+
   return {};
+}
+
+function test(){
+  console.log('this is a test');
 }
 
 const mapDispatchToProps = dispatch => {
   // return an object of methods you'd like
   // to dispatch as redux actions
-  return {};
+  return bindActionCreators({fetchCurrentLocationForecast}, dispatch);
+  // return {test}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

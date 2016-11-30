@@ -10,7 +10,16 @@ export const fetchForecast = options => dispatch => {
 
 export const fetchCurrentLocationForecast = options => dispatch => {
   // return fetch API call by goelocation
+  console.log('test');
+  let localForecast;
   navigator.geolocation.getCurrentPosition((position) => {
-    console.log(position);
+    localForecast = position.coords.latitude;
+
+    return (dispatch)=>{
+      dispatch({
+        type: 'GET_LOCAL_FORECAST',
+        localForecast
+      })
+    }
   })
 };
