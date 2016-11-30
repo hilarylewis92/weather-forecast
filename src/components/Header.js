@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({name, temp, desc}) => {
   return(
     <article>
       <h1>Weather Tracker</h1>
       <section>
         <p>
-          Current forecast for props city: props forecast props temp
+          Current forecast for {name}: {desc} {temp}
         </p>
         <p>
           View Extended Forecast
