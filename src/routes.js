@@ -10,8 +10,8 @@ const Routes = (props) => (
   <Router {...props}>
     <Route path="/" component={App}>
       <IndexRoute component={Dashboard} />
-      <Route path="settings" component={Settings} />
-      <Route path="forecast" component={ExtendedForecast} />
+      <Route path="/settings" component={Settings} />
+      <Route path="/forecast" component={ExtendedForecast} />
     </Route>
   </Router>
 );

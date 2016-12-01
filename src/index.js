@@ -6,7 +6,7 @@ import { browserHistory } from 'react-router';
 import Routes from './routes';
 import thunk from 'redux-thunk';
 import RootReducer from './reducers/RootReducer';
-
+require('./style/main.css')
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

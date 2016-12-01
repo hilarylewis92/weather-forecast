@@ -19,7 +19,7 @@ class App extends Component {
     this.props.fetchPinnedLocationForecast()
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.getCurrentLocation();
     this.getPinnedLocation();
   }
