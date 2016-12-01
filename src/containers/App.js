@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { fetchCurrentLocationWeather, fetchCurrentLocationForecast, fetchPinnedLocationWeather, fetchPinnedLocationForecast } from '../actions/index'
+import{ fetchCurrentLocationWeather, fetchPinnedLocationWeather } from '../actions/index'
 
 import Header from '../containers/Header'
 
@@ -10,13 +10,11 @@ class App extends Component {
   getCurrentLocation(){
     navigator.geolocation.getCurrentPosition((position) => {
       this.props.fetchCurrentLocationWeather(position)
-      this.props.fetchCurrentLocationForecast(position)
     })
   }
 
   getPinnedLocation() {
     this.props.fetchPinnedLocationWeather()
-    this.props.fetchPinnedLocationForecast()
   }
 
   componentWillMount(){
@@ -39,7 +37,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({fetchCurrentLocationWeather, fetchCurrentLocationForecast, fetchPinnedLocationWeather, fetchPinnedLocationForecast}, dispatch);
+  return bindActionCreators({fetchCurrentLocationWeather, fetchPinnedLocationWeather}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
