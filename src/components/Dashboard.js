@@ -1,6 +1,7 @@
 import React from 'react'
 // import Card from '../containers/Card'
 import Card from '../components/Card'
+import { Link } from 'react-router'
 
 const Dashboard = () => {
   return(
