@@ -21,8 +21,6 @@ export const fetchCurrentLocationWeather = ( position ) => {
 };
 
 export const fetchPinnedLocationWeather = ( zip ) => {
-  // const zip = 80210;
-
   return (dispatch) => {
     return fetch(`https://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/alerts/hourly10day/q/${zip}.json`)
       .then(weather => weather.json())
@@ -32,7 +30,7 @@ export const fetchPinnedLocationWeather = ( zip ) => {
           type: 'SET_PINNED_WEATHER',
           weatherInfo
         })
-      }
-    )
+      })
+
   }
 };
