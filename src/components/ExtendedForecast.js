@@ -9,7 +9,7 @@ const ExtendedForecast = ({name, list}) => {
       <h1>{name}</h1>
       ExtendedForecast
       <p>{list.map((item) => {
-        return (<span>{item.main.temp}</span>)
+        return (<span>High: {item.high.fahrenheit} Low: {item.low.fahrenheit}</span>)
       })}</p>
     </div>
   )

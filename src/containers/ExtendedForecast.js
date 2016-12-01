@@ -3,12 +3,12 @@ import ExtendedForecast from '../components/ExtendedForecast'
 
 const mapStateToProps = (state) => {
   console.log(state);
-  if (!state.LocalForecastReducer.city) {
+  if (!state.LocalWeatherReducer.current_observation) {
     return {}
   }
   return {
-    name: state.LocalForecastReducer.city.name,
-    list: state.LocalForecastReducer.list,
+    name: state.LocalWeatherReducer.current_observation.display_location.full,
+    list: state.LocalWeatherReducer.forecast.simpleforecast.forecastday,
   }
 
 }
