@@ -13,13 +13,8 @@ class App extends Component {
     })
   }
 
-  getPinnedLocation() {
-    this.props.fetchPinnedLocationWeather()
-  }
-
   componentWillMount(){
     this.getCurrentLocation();
-    this.getPinnedLocation();
   }
   render() {
     return (
