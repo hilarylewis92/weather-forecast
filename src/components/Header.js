@@ -6,7 +6,7 @@ const Header = ({name, temp, desc}) => {
   // console.log(ducklogo);
   return(
     <header>
-      <img className='home-logo' alt="It's a duck!"/>
+      <div className='home-logo' alt="It's a duck!"></div>
       <h1 className='title'>Weather Dux</h1>
       <div className='current-weather'>
            <span className='current-location'>{name} </span>
