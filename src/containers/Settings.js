@@ -2,8 +2,14 @@ import { connect } from 'react-redux';
 import Settings from '../components/Settings'
 import {fetchPinnedLocationWeather} from '../actions/index'
 
-const mapStateToProps = (state) => {
- return {}
+const mapStateToProps = (state = []) => {
+  console.log(state);
+  if (!state.PinnedWeatherReducer[0]) {
+    return {}
+  }
+ return {
+    cities: state.PinnedWeatherReducer
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
