@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const Settings = ({onSubmit, cities}) => {
   let input
@@ -20,6 +21,7 @@ const Settings = ({onSubmit, cities}) => {
           onSubmit(input.value)
           }}>
       Save New City </button>
+      <Link to="/">Home</Link>
     </div>
   )
 }
