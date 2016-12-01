@@ -8,6 +8,7 @@ const Dashboard = () => {
       <Card />
       <Card />
       <Card />
+      <Link to="/settings"> Edit My Cities </Link>
     </div>
   )
 }
