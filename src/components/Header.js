@@ -1,18 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router';
+// import ducklogo from './ducklogo.svg'
 
 const Header = ({name, temp, desc}) => {
+  // console.log(ducklogo);
   return(
-    <article>
-      <h1>Weather Tracker</h1>
-      <section>
-        <p>
-          Current forecast for {name}: {desc} {temp}
-        </p>
-        <p>
-          View Extended Forecast
-        </p>
-      </section>
-    </article>
+    <header>
+      <img className='home-logo' alt="It's a duck!"/>
+      <h1 className='title'>Weather Dux</h1>
+      <div className='current-weather'>
+           <span className='current-location'>{name} </span>
+           <span className='current-desc'> {desc} </span>
+           <span className='current-temp'> {temp}&deg; </span>
+      </div>
+      <Link to="/forecast" className="current-view-extended"> View Extended Forecast --> </Link>
+    </header>
   )
 }
 

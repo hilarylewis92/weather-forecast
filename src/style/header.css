@@ -1,0 +1,36 @@
+
+
+header {
+  display: block;
+  width: 100%;
+  height: 100px;
+  background-color: MediumAquaMarine;
+}
+
+.title{
+  display: block;
+  font-size: 25px;
+  margin: auto;
+  text-align: center;
+}
+
+.current-weather{
+  margin-left: 150px;
+}
+
+.current-location{
+  font-size: 35px;
+}
+
+.current-desc{
+  font-size: 20px;
+}
+
+.current-temp{
+  font-size: 20px;
+}
+
+.current-view-extended{
+  float: right;
+  margin-right: 20px;
+}
