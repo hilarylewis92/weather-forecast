@@ -31,6 +31,13 @@ header {
   background-repeat: no-repeat;
   background-size: 100%;
   background-image: url('../imgs/ducklogo.svg');
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+        transition:         transform .5s ease-in-out;
+}
+
+.home-logo:hover {
+  -webkit-transform: rotate(-8deg);
+          transform: rotate(-8deg);
 }
 
 .home-link{
@@ -41,7 +48,7 @@ header {
   color: yellow;
   font-size: 13px;
   position: relative;
-  top: 30px;
+  top: 32px;
 }
 
 .current-weather{
