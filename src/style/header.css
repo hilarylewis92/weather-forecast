@@ -33,24 +33,29 @@ header {
   background-image: url('../imgs/ducklogo.svg');
 }
 
+.home-link{
+  text-decoration: none;
+}
 
 .title{
-  display: block;
-  font-size: 25px;
-  margin: auto;
-  padding-top: 10px;
-  text-align: center;
+  color: yellow;
+  font-size: 13px;
+  position: relative;
+  top: 30px;
 }
 
 .current-weather{
-  margin-left: 150px;
+  display: block;
 }
 
 .current-location{
-  font-size: 35px;
+  font-size: 25px;
+  margin-left: 10px;
 }
 
 .current-desc{
+  display: block;
+  margin-top: 35px;
   font-size: 20px;
 }
 
@@ -60,5 +65,8 @@ header {
 
 .current-view-extended{
   float: right;
+  position: relative;
+  right: 0px;
+  bottom: 10px;
   margin-right: 20px;
 }
