@@ -12,7 +12,6 @@ class App extends Component {
       this.props.fetchCurrentLocationWeather(position)
     })
   }
-
   componentWillMount(){
     this.getCurrentLocation();
   }
@@ -25,7 +24,6 @@ class App extends Component {
     )
   }
 }
-
 const mapStateToProps = state => {
 
   return {};

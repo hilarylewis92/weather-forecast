@@ -3,8 +3,7 @@ const PinnedWeatherReducer = (state = [], action) => {
     case 'SET_PINNED_WEATHER':
       return [...state, Object.assign({}, state, action.weatherInfo)]
     case 'DELETE_PINNED_CITY':
-      console.log(state.slice(action.id+1));
-      return state.slice(action.id+1)
+      return state.filter((item, index) => index !== action.id)
     default:
       return state
   }
