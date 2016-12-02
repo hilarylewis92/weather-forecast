@@ -3,7 +3,6 @@ import Settings from '../components/Settings'
 import {fetchPinnedLocationWeather} from '../actions/index'
 
 const mapStateToProps = (state = []) => {
-  console.log(state);
   if (!state.PinnedWeatherReducer[0]) {
     return {}
   }
@@ -18,6 +17,12 @@ const mapDispatchToProps = (dispatch) => {
       dispatch (
         fetchPinnedLocationWeather(zip)
       )
+    },
+    deleteCity: (id) => {
+      dispatch({
+          type: 'DELETE_PINNED_CITY',
+          id: id
+        })
     }
   }
 }

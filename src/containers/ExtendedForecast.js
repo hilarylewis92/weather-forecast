@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import ExtendedForecast from '../components/ExtendedForecast'
 
 const mapStateToProps = (state) => {
-  console.log(state);
   if (!state.LocalWeatherReducer.current_observation) {
     return {}
   }

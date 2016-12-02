@@ -2,7 +2,6 @@ import React from 'react'
 
 
 const ExtendedForecast = ({name, list}) => {
-  console.log(list);
   if (list) {
   return(
     <div>

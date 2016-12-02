@@ -25,7 +25,6 @@ export const fetchPinnedLocationWeather = ( zip ) => {
     return fetch(`https://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/alerts/hourly10day/q/${zip}.json`)
       .then(weather => weather.json())
       .then((weatherInfo) => {
-        console.log(weatherInfo);
         dispatch({
           type: 'SET_PINNED_WEATHER',
           weatherInfo

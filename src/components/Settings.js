@@ -1,16 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-const Settings = ({onSubmit, cities}) => {
+const Settings = ({onSubmit, cities, deleteCity}) => {
   let input
-  console.log(cities);
   return(
     <div>
       <h2> My Cities </h2>
-        <p>{cities ? cities.map((item) => {
+        <p>{cities ? cities.map((item, i) => {
           return (
             <div>
               {item.current_observation.display_location.full}
+              <button onClick={()=>deleteCity(i)}>X</button>
+              <div>{i}</div>
             </div>
           )
         }) : null}</p>
