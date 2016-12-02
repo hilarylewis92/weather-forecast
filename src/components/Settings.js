@@ -3,6 +3,8 @@ import { Link } from 'react-router'
 
 const Settings = ({onSubmit, cities, deleteCity}) => {
   let input
+  console.log('rerender')
+  // console.log(cities);
   return(
     <div>
       <h2> My Cities </h2>

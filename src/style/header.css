@@ -7,7 +7,20 @@ header {
   background-color: MediumAquaMarine;
 }
 
+@keyframes lotsOfFunkyDucks {
+  0%   {background-size: 1%}
+25%   {background-size: 3%}
+50%   {background-size: 12%}
+75%   {background-size: 20%}
+100%  {background-size: 35%}
+}
+
+
+
 .home-logo{
+  /*animation-name: lotsOfFunkyDucks;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;*/
   color: black;
   display: inline-block;
   float: left;
@@ -17,8 +30,9 @@ header {
   width: 75px;
   background-repeat: no-repeat;
   background-size: 100%;
-  background-image: url('../imgs/ducklogo.svg')
+  background-image: url('../imgs/ducklogo.svg');
 }
+
 
 .title{
   display: block;
