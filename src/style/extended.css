@@ -1,0 +1,54 @@
+
+.extend-city-header{
+  font-size: 40px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.extend-day-card-container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.extend-day-card{
+  width: 150px;
+  margin: 10px;
+  border: 2px solid lightGrey;
+  padding: 10px;
+}
+
+.extend-weekday-header{
+  border-bottom: 1px lightGrey;
+  font-size: 15px;
+  text-align: center;
+}
+
+.extend-weekday-dayname{
+  margin: 5px;
+}
+
+.extend-date{
+  margin: 5px;
+}
+
+.extend-conditions{
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.extend-image{
+  display: block;
+  margin: auto;
+}
+
+.extend-high-low-temp{
+  display: block;
+  text-align: center;
+}
+
+.extend-temp{
+  margin: 10px;
+}
