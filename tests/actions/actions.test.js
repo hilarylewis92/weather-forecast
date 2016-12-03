@@ -9,6 +9,6 @@ describe('actions', () => {
       type: 'SET_LOCAL_WEATHER',
       weatherInfo: weatherInfo
     }
-    expect(actions.fetchCurrentLocationWeather(weatherInfo)).toEqual(expectedAction)
+    expect(actions.fetchCurrentLocationWeather(lat, lon, weatherInfo)).toEqual(expectedAction)
   })
 })
