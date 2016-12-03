@@ -1,10 +1,9 @@
 import React from 'react'
-// import Card from '../containers/Card'
-import Card from '../containers/Card'
 import { Link } from 'react-router'
+import Card from '../containers/Card'
 
 const Dashboard = () => {
-  return(
+  return (
     <div className="city-card-container">
       <Card id={0} />
       <Card id={1} />
