@@ -1,6 +1,8 @@
 require('isomorphic-fetch');
 
 const recieveCurrentLocationWeatherInfo = weatherInfo => {
+  console.log(weatherInfo);
+
   return {
     type: 'SET_LOCAL_WEATHER',
     weatherInfo
