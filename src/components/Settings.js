@@ -4,26 +4,26 @@ import { Link } from 'react-router'
 const Settings = ({ onSubmit, cities, deleteCity }) => {
   let input
   return (
-    <div>
-      <h2> My Cities </h2>
-      <p>{cities ? cities.map((item, i) => {
+    <div className="settings-container">
+      <h2 className="settings-title"> My Cities </h2>
+      <div>{cities ? cities.map((item, i) => {
         return (
-          <div>
+          <div key={i} className="settings-city-container">
             {item.current_observation.display_location.full}
-            <button onClick={() => deleteCity(i)}>X</button>
-            <div>{i}</div>
+            <button className="settings-delete-city" onClick={() => deleteCity(i)}>X</button>
           </div>
         )
-      }) : null}</p>
-      <input ref={(node) => { input = node }} placeholder="zip code" />
-      <button
-        onClick={(e) => {
-          e.preventDefault()
-          onSubmit(input.value)
-        }}
-      >
-      Save New City </button>
-      <Link to="/">Home</Link>
+      }) : null}</div>
+      <div className='settings-input-container'>
+        <input className="settings-city-input" ref={(node) => { input = node }} placeholder="zip code" />
+        <button className="settings-save-city"
+          onClick={(e) => {
+            e.preventDefault()
+            onSubmit(input.value)
+          }}
+        >
+        Save New City </button>
+      </div>
     </div>
   )
 }
