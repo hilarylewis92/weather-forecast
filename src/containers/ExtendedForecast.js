@@ -11,4 +11,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(ExtendedForecast)
+export default connect(mapStateToProps)(ExtendedForecastContainer)
