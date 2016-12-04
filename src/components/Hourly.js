@@ -5,7 +5,6 @@ const HourlyForecast = ({ local, pinned, params }) => {
 
   const id = params.id
   const day = params.day
-  console.log(day);
 
   let hourly
   let tempForecastArray = []
@@ -29,15 +28,22 @@ const HourlyForecast = ({ local, pinned, params }) => {
   }
 
   sliceHourlyArray()
-  
-  console.log(tempForecastArray);
 
   return (
     <div>
       { tempForecastArray[day].map( (hour, index) => {
         return (
-          <div key={index}>
-            {hour.temp.english}
+          <div className='hourly-container' key={index}>
+            <span className='hourly-time'>
+              {hour.FCTTIME.civil}
+            </span>
+            <span className='hourly-condtion'>
+              {hour.conditions}
+            </span>
+            <span className='hourly-temp'>
+              {hour.temp.english}
+            </span>
+            <img className='hourly-image' src={hour.icon_url} />
           </div>
         )
       } ) }
