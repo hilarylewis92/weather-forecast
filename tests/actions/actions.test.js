@@ -7,7 +7,7 @@ describe('actions', () => {
     const weatherInfo = []
     const expectedAction = {
       type: 'SET_LOCAL_WEATHER',
-      weatherInfo: weatherInfo
+      weatherInfo,
     }
     expect(actions.fetchCurrentLocationWeather(lat, lon, weatherInfo)).toEqual(expectedAction)
   })
