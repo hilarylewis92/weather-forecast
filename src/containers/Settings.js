@@ -20,19 +20,6 @@ const mapStateToProps = (state = []) => {
     error,
   }
 }
-//
-// const mapStateToProps = (state = []) => {
-//   if (!state.PinnedWeatherReducer[0] && state.ErrorMessageReducer === '') {
-//     return {
-//       cities: [],
-//       error: '',
-//     }
-//   }
-//   return {
-//     cities: state.PinnedWeatherReducer,
-//     error: state.ErrorMessageReducer,
-//   }
-// }
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -3,9 +3,7 @@ import { Link } from 'react-router'
 
 const Settings = ({ onSubmit, cities, deleteCity, error, clearError }) => {
   let input
-  console.log(error);
-  // let errorMessage = error
-
+  
   return (
     <div className="settings-container">
       <h2 className="settings-title">
