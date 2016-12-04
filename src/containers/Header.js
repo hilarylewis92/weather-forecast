@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import Header from '../components/Header'
 
 const mapStateToProps = (state) => {
@@ -10,7 +10,6 @@ const mapStateToProps = (state) => {
     temp: state.LocalWeatherReducer.current_observation.temp_f,
     desc: state.LocalWeatherReducer.current_observation.weather,
   }
-
 }
 
 export default connect(mapStateToProps)(Header)

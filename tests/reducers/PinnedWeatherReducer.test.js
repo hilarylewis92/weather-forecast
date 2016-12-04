@@ -6,30 +6,30 @@ describe('PinnedWeatherReducer', () => {
   })
 
   it('should return a state with pinned weather information', () => {
-    let action = {
+    const action = {
       type: 'SET_PINNED_WEATHER',
       weatherInfo: {
         weatherInfo: {
           name: 'Denver',
           temp: '35',
-          desc:'cold'
-        }
-      }
+          desc: 'cold',
+        },
+      },
     }
-    let initial = {
+    const initial = {
       weatherInfo: {
         name: 'Denver',
         temp: '35',
-        desc:'cold'}
+        desc: 'cold',
+      },
     }
-
-    let expected = [{
+    const expected = [{
       weatherInfo: {
         name: 'Denver',
         temp: '35',
-        desc:'cold'}
+        desc: 'cold',
+      },
     }]
-
     expect(PinnedWeatherReducer(initial, action)).toEqual(expected)
   })
 })

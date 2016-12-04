@@ -1,12 +1,11 @@
-import React from 'react';
-import { Router, Route, IndexRoute } from 'react-router';
+import React from 'react'
+import { Router, Route, IndexRoute } from 'react-router'
+import App from './containers/App'
+import Dashboard from './components/Dashboard'
+import ExtendedForecast from './containers/ExtendedForecast'
+import Settings from './containers/Settings'
 
-import App from './containers/App';
-import Dashboard from './components/Dashboard';
-import Settings from './containers/Settings';
-import ExtendedForecast from './containers/ExtendedForecast';
-
-const Routes = (props) => (
+const Routes = props => (
   <Router {...props}>
     <Route path="/" component={App}>
       <IndexRoute component={Dashboard} />
@@ -14,6 +13,6 @@ const Routes = (props) => (
       <Route path="/forecast" component={ExtendedForecast} />
     </Route>
   </Router>
-);
+)
 
-export default Routes;
+export default Routes

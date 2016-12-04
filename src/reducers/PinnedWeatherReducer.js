@@ -9,4 +9,4 @@ const PinnedWeatherReducer = (state = [], action) => {
   }
 }
 
-export default PinnedWeatherReducer;
+export default PinnedWeatherReducer

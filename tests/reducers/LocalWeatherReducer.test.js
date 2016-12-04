@@ -6,30 +6,30 @@ describe('LocalWeatherReducer', () => {
   })
 
   it('should return a state with local weather information', () => {
-    let action = {
+    const action = {
       type: 'SET_LOCAL_WEATHER',
       weatherInfo: {
         weatherInfo: {
           name: 'Denver',
           temp: '35',
-          desc:'cold'
-        }
-      }
+          desc: 'cold',
+        },
+      },
     }
-    let initial = {
+    const initial = {
       weatherInfo: {
         name: 'Denver',
         temp: '35',
-        desc:'cold'}
+        desc: 'cold',
+      },
     }
-
-    let expected = {
+    const expected = {
       weatherInfo: {
         name: 'Denver',
         temp: '35',
-        desc:'cold'}
+        desc: 'cold',
+      },
     }
-
     expect(LocalWeatherReducer(initial, action)).toEqual(expected)
   })
 })
