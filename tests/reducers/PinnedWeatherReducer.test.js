@@ -1,13 +1,13 @@
-import LocalWeatherReducer from '../../src/reducers/LocalWeatherReducer'
+import PinnedWeatherReducer from '../../src/reducers/PinnedWeatherReducer'
 
-describe('LocalWeatherReducer', () => {
+describe('PinnedWeatherReducer', () => {
   it('should return the initial state', () => {
-    expect(LocalWeatherReducer(undefined, {})).toEqual({})
+    expect(PinnedWeatherReducer(undefined, [])).toEqual([])
   })
 
-  it('should return a state with local weather information', () => {
+  it('should return a state with pinned weather information', () => {
     let action = {
-      type: 'SET_LOCAL_WEATHER',
+      type: 'SET_PINNED_WEATHER',
       weatherInfo: {
         weatherInfo: {
           name: 'Denver',
@@ -23,13 +23,13 @@ describe('LocalWeatherReducer', () => {
         desc:'cold'}
     }
 
-    let expected = {
+    let expected = [{
       weatherInfo: {
         name: 'Denver',
         temp: '35',
         desc:'cold'}
-    }
+    }]
 
-    expect(LocalWeatherReducer(initial, action)).toEqual(expected)
+    expect(PinnedWeatherReducer(initial, action)).toEqual(expected)
   })
 })
