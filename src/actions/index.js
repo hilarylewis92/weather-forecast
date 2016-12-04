@@ -20,10 +20,16 @@ export const fetchCurrentLocationWeather = ( position ) => {
 };
 
 export const recievePinnedLocationWeatherInfo = weatherInfo => {
-  console.log(weatherInfo);
   return {
     type: 'SET_PINNED_WEATHER',
     weatherInfo
+  }
+}
+
+export const recieveInvalidZip = errorMessage => {
+  return {
+    type: 'ERROR_MESSAGE',
+    errorMessage
   }
 }
 
@@ -31,7 +37,13 @@ export const fetchPinnedLocationWeather = ( zip ) => {
   return (dispatch) => {
     return fetch(`https://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/alerts/hourly10day/q/${zip}.json`)
       .then(weather => weather.json())
-      .then(json => dispatch(recievePinnedLocationWeatherInfo(json))
+      .then(json => {
+        if (json.current_observation) {
+          dispatch(recievePinnedLocationWeatherInfo(json))
+        } else {
+          dispatch(recieveInvalidZip(json.response.error.description))
+        }
+      }
     )
   }
 };

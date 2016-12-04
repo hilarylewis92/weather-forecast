@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-const Settings = ({ onSubmit, cities, deleteCity }) => {
+const Settings = ({ onSubmit, cities, deleteCity, error }) => {
   let input
+  console.log(error);
+  // let errorMessage = error
+
   return (
     <div className="settings-container">
       <h2 className="settings-title">
@@ -29,10 +32,15 @@ const Settings = ({ onSubmit, cities, deleteCity }) => {
           onClick={(e) => {
             e.preventDefault()
             onSubmit(input.value)
+            input.value = ''
           }}
         >
           Save New City
         </button>
+      </div>
+      <div>{error ?
+          error
+        : null}
       </div>
     </div>
   )

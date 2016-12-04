@@ -3,11 +3,21 @@ import Settings from '../components/Settings'
 import { fetchPinnedLocationWeather } from '../actions/index'
 
 const mapStateToProps = (state = []) => {
+  let cities
   if (!state.PinnedWeatherReducer[0]) {
-    return {}
+    cities = null
+  } else {
+    cities = state.PinnedWeatherReducer
+  }
+  let error
+  if(state.ErrorMessageReducer === ''){
+    error = null
+  }else {
+    error = state.ErrorMessageReducer
   }
   return {
-    cities: state.PinnedWeatherReducer,
+    cities,
+    error,
   }
 }
 
