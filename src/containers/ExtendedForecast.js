@@ -6,8 +6,8 @@ const mapStateToProps = (state) => {
     return {}
   }
   return {
-    name: state.LocalWeatherReducer.current_observation.display_location.full,
-    list: state.LocalWeatherReducer.forecast.simpleforecast.forecastday,
+    local: state.LocalWeatherReducer,
+    pinned: state.PinnedWeatherReducer,
   }
 }
 
