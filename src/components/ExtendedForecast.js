@@ -27,10 +27,9 @@ const ExtendedForecast = ({ local, pinned, params }) => {
                   {item.date.weekday}
                 </h4>
                 <div className="extend-date">
-                  <span>{item.date.monthname}
-                    {item.date.day},
-                    {item.date.year}
-                  </span>
+                  <span>{item.date.monthname}</span>
+                  <span> {item.date.day}, </span>
+                  <span>{item.date.year}</span>
                 </div>
               </div>
               <div className="extend-conditions">
