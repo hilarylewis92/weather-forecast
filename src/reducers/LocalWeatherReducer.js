@@ -7,4 +7,4 @@ const LocalWeatherReducer = (state = {}, action) => {
   }
 }
 
-export default LocalWeatherReducer;
+export default LocalWeatherReducer
