@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-const Settings = ({ onSubmit, cities, deleteCity, error }) => {
+const Settings = ({ onSubmit, cities, deleteCity, error, clearError }) => {
   let input
   console.log(error);
   // let errorMessage = error
@@ -27,6 +27,9 @@ const Settings = ({ onSubmit, cities, deleteCity, error }) => {
         <input className="settings-city-input"
           ref={(node) => { input = node }}
           placeholder="zip code"
+          onChange={
+            () => clearError()
+          }
         />
         <button className="settings-save-city"
           onClick={(e) => {
