@@ -4,7 +4,7 @@ import thunk from 'redux-thunk'
 import { render } from 'react-dom'
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import { Provider } from 'react-redux'
-import { browserHistory } from 'react-router'
+import { browserHistory, hashHistory } from 'react-router'
 import Routes from './routes'
 import RootReducer from './reducers/RootReducer'
 
@@ -22,7 +22,8 @@ const store = createStore(
 
 render(
   <Provider store={store}>
-    <Routes history={browserHistory} />
+    {/* <Routes history={browserHistory} /> */}
+    <Routes history={hashHistory} />
   </Provider>,
   document.getElementById('root'),
 )
