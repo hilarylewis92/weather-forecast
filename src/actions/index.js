@@ -1,49 +1,47 @@
-require('isomorphic-fetch');
+require('isomorphic-fetch')
 
-const recieveCurrentLocationWeatherInfo = weatherInfo => {
-  console.log(weatherInfo);
-
+const recieveCurrentLocationWeatherInfo = (weatherInfo) => {
   return {
     type: 'SET_LOCAL_WEATHER',
-    weatherInfo
+    weatherInfo,
   }
 }
 
-export const fetchCurrentLocationWeather = ( position ) => {
-  const lat = position.coords.latitude;
-  const lon = position.coords.longitude;
+export const fetchCurrentLocationWeather = (position) => {
+  const lat = position.coords.latitude
+  const lon = position.coords.longitude
 
   return (dispatch) => {
-    return fetch(`https://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/alerts/hourly10day/q/${lat},${lon}.json`)
+    return fetch(`https://api.wunderground.com/api/f02ab35ece7a9d29/conditions/forecast10day/alerts/hourly10day/q/${lat},${lon}.json`)
       .then(weather => weather.json())
       .then(json => dispatch(recieveCurrentLocationWeatherInfo(json))
     )
   }
-};
+}
 
-export const recievePinnedLocationWeatherInfo = weatherInfo => {
+export const recievePinnedLocationWeatherInfo = (weatherInfo) => {
   return {
     type: 'SET_PINNED_WEATHER',
-    weatherInfo
+    weatherInfo,
   }
 }
 
-export const recieveInvalidZip = errorMessage => {
+export const recieveInvalidZip = (errorMessage) => {
   return {
     type: 'ERROR_MESSAGE',
-    errorMessage
+    errorMessage,
   }
 }
 
-export const fetchPinnedLocationWeather = ( zip ) => {
+export const fetchPinnedLocationWeather = (zip) => {
   return (dispatch) => {
-    return fetch(`https://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/alerts/hourly10day/q/${zip}.json`)
+    return fetch(`https://api.wunderground.com/api/f02ab35ece7a9d29/conditions/forecast10day/alerts/hourly10day/q/${zip}.json`)
       .then(weather => weather.json())
       .then(json => {
         if (json.current_observation) {
           let zipArray = JSON.parse(localStorage.getItem('zips'))
-          if(zipArray === null){
-            zipArray = [];
+          if (zipArray === null) {
+            zipArray = []
           }
           zipArray.push(json.current_observation.display_location.zip)
           localStorage.setItem('zips', JSON.stringify(zipArray))
@@ -52,14 +50,14 @@ export const fetchPinnedLocationWeather = ( zip ) => {
         } else {
           dispatch(recieveInvalidZip(json.response.error.description))
         }
-      }
+      },
     )
   }
-};
+}
 
-export const fetchSavedLocationWeather = ( zip ) => {
+export const fetchSavedLocationWeather = (zip) => {
   return (dispatch) => {
-    return fetch(`https://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/alerts/hourly10day/q/${zip}.json`)
+    return fetch(`https://api.wunderground.com/api/f02ab35ece7a9d29/conditions/forecast10day/alerts/hourly10day/q/${zip}.json`)
       .then(weather => weather.json())
       .then(json => {
         if (json.current_observation) {
@@ -67,7 +65,7 @@ export const fetchSavedLocationWeather = ( zip ) => {
         } else {
           dispatch(recieveInvalidZip(json.response.error.description))
         }
-      }
+      },
     )
   }
-};
+}
