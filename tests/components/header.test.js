@@ -7,5 +7,5 @@ describe('Header', () => {
   it('renders a header element', () => {
     const wrapper = mount(<Header />)
     expect(wrapper.type(), 'header')
-  });
+  })
 })

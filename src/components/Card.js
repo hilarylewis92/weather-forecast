@@ -11,7 +11,9 @@ const Card = ({ list, id }) => {
             <h3 className="card-location">
               {list[id].current_observation.display_location.full}
             </h3>
-            <img className="card-img" role="presentation"
+            <img
+              className="card-img"
+              role="presentation"
               src={list[id].current_observation.icon_url}
             />
             <span className="card-temp">
