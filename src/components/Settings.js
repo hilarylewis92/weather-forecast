@@ -1,3 +1,5 @@
+/* eslint no-unneeded-ternary: 0 */
+
 import React from 'react'
 import { Link } from 'react-router'
 
@@ -12,8 +14,10 @@ const Settings = ({ onSubmit, cities, deleteCity, error, clearError }) => {
       <div>{cities ? cities.map((item, i) => {
         return (
           <div key={i} className="settings-city-container">
-            <button className="settings-delete-city"
-              onClick={() => deleteCity(i)}>
+            <button
+              className="settings-delete-city"
+              onClick={() => deleteCity(i)}
+            >
               X
             </button>
             {item.current_observation.display_location.full}
@@ -21,15 +25,17 @@ const Settings = ({ onSubmit, cities, deleteCity, error, clearError }) => {
         )
       }) : null}
       </div>
-      <div className='settings-input-container'>
-        <input className="settings-city-input"
+      <div className="settings-input-container">
+        <input
+          className="settings-city-input"
           ref={(node) => { input = node }}
           placeholder="zip code"
           onChange={
             () => clearError()
           }
         />
-        <button className="settings-save-city"
+        <button
+          className="settings-save-city"
           onClick={(e) => {
             e.preventDefault()
             onSubmit(input.value)
@@ -40,8 +46,9 @@ const Settings = ({ onSubmit, cities, deleteCity, error, clearError }) => {
         </button>
       </div>
       <div>{error ?
-          error
-        : null}
+        error
+        :
+        null}
       </div>
     </div>
   )

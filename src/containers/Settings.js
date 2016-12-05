@@ -10,9 +10,9 @@ const mapStateToProps = (state = []) => {
     cities = state.PinnedWeatherReducer
   }
   let error
-  if(state.ErrorMessageReducer === ''){
+  if (state.ErrorMessageReducer === '') {
     error = null
-  }else {
+  } else {
     error = state.ErrorMessageReducer
   }
   return {
@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     clearError: () => {
       dispatch({
-        type: 'ERROR_MESSAGE_CLEAR'
+        type: 'ERROR_MESSAGE_CLEAR',
       })
     },
     deleteCity: (id) => {

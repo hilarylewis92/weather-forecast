@@ -2,12 +2,11 @@ import React from 'react'
 import { Link } from 'react-router'
 
 const ExtendedForecast = ({ local, pinned, params, children }) => {
-
   const id = params.id
   let list
   let name
 
-  if(id >= 0) {
+  if (id >= 0) {
     name = pinned[id].current_observation.display_location.full
     list = pinned[id].forecast.simpleforecast.forecastday
   } else {
@@ -25,7 +24,7 @@ const ExtendedForecast = ({ local, pinned, params, children }) => {
         {list.map((item, index) => {
           return (
             <Link key={index} to={`/forecast/${id}/hourly/${index}`} >
-              <div  className="extend-day-card">
+              <div className="extend-day-card">
                 <div className="extend-weekday-header">
                   <h4 className="extend-weekday-dayname">
                     {item.date.weekday}
@@ -39,7 +38,9 @@ const ExtendedForecast = ({ local, pinned, params, children }) => {
                 <div className="extend-conditions">
                   {item.conditions}
                 </div>
-                <img className="extend-image" alt="weather for today"
+                <img
+                  className="extend-image"
+                  alt="weather for today"
                   src={item.icon_url}
                 />
                 <div className="extend-high-low-temp">

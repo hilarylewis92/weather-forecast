@@ -1,10 +1,12 @@
-export const mockStore = (state) => {
-	return {
-		default: () => {},
-		subscribe: () => {},
-		dispatch: () => {},
-		getState: () => {
-			return { ...state };
-		},
-	};
-};
+const mockStore = (state) => {
+  return {
+    default: () => {},
+    subscribe: () => {},
+    dispatch: () => {},
+    getState: () => {
+      return { ...state }
+    },
+  }
+}
+
+export { mockStore as default }

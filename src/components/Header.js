@@ -10,7 +10,7 @@ const Header = ({ name, temp, desc }) => {
       </Link>
       <div className="current-weather">
         <span className="current-location">
-        {name}
+          {name}
         </span>
         <span className="current-desc">
           {desc}
