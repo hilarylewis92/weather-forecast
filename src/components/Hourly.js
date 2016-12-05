@@ -30,8 +30,8 @@ const HourlyForecast = ({ local, pinned, params }) => {
   sliceHourlyArray()
 
   return (
-    <div>
-      { tempForecastArray[day].map( (hour, index) => {
+    <div className='hourly-card-container'>
+      {tempForecastArray[day].map( (hour, index) => {
         return (
           <div className='hourly-container' key={index}>
             <span className='hourly-time'>
