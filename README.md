@@ -1,10 +1,5 @@
 # React/Redux Weather Forecast Application
 
-This project template was built with [Create React App](https://github.com/facebookincubator/create-react-app).
+[Weather Dux](https://hilarylewis92.github.io/weather-forecast/#/?_k=myzv4x)
 
-## Setup
-
-### `npm install`
-### `npm start`
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This weather application was built using React, React-Router, and Redux and tested with Jest and Enzyme. The application retrieves and displays forecast data from Weather Underground API, uses the Geolocation to determine the weather in your current location, and saves favorite cities to display their forecasts. For each city, the user can display current forecast, ten day forecast, hourly forecast for each day, and delete any pinned cities. 
