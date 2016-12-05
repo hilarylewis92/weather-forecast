@@ -3,7 +3,7 @@ const PinnedWeatherReducer = (state = [], action) => {
     case 'SET_PINNED_WEATHER':
       return [...state, Object.assign({}, state, action.weatherInfo)]
     case 'DELETE_PINNED_CITY':
-      //remove city from local storage
+
       let zipArray = JSON.parse(localStorage.getItem('zips'))
       zipArray.splice(action.id, 1)
       localStorage.setItem('zips', JSON.stringify(zipArray))
