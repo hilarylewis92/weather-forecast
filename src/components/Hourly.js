@@ -33,7 +33,7 @@ const HourlyForecast = ({ local, pinned, params }) => {
         return (
           <div className="hourly-container" key={index}>
             <span className="hourly-time">
-              {hour.FCTTIME.civil}
+              {hour.FCTTIME.ampm === 'PM' && hour.FCTTIME.hour !== '12' ? +hour.FCTTIME.hour-12 : hour.FCTTIME.hour} {hour.FCTTIME.ampm}
             </span>
             <span className="hourly-condtion">
               {hour.conditions}
