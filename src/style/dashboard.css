@@ -22,18 +22,20 @@
 }
 
 .card-location{
+  font-size: 35px;
   margin: 10px;
   margin-top: 15px;
   padding-bottom: 5px;
   text-align: center;
   border-bottom: 2px solid black;
-  font-size: 26px;
-
 }
 
 .card-img{
   display: block;
   margin: auto;
+  padding: 10px;
+  height: 70px;
+  width: 70px;
 }
 
 .card-temp{
@@ -46,7 +48,7 @@
 
 .card-weather{
   display: block;
-  font-size: 20px;
+  font-size: 25px;
   margin: 20px;
   text-align: center;
 }
@@ -66,12 +68,24 @@
 
 .card-text-box{
   color: white;
-  font-size: 26px;
+  font-size: 180px;
   position: relative;
   top: 50px;
+}
+
+.card-text-box:hover {
+  color: yellow;
 }
 
 .edit-cities-link {
   color: black;
   font-size: 22px;
+}
+
+.edit-cities-link:hover {
+  color: MediumAquaMarine;
+}
+
+.dashboard {
+  text-align: center;
 }

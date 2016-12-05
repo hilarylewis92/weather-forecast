@@ -25,7 +25,7 @@ const Card = ({ list, id }) => {
       :
         <Link className="card-link-to-settings" to="/settings">
           <div className="card-text-box">
-            Save a New City
+            +
           </div>
         </Link>
       }

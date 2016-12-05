@@ -10,3 +10,8 @@ html{
     background-color: Azure;
     font-family: 'Roboto', sans-serif;
 }
+
+*, body {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+}

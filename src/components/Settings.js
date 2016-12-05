@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 const Settings = ({ onSubmit, cities, deleteCity, error, clearError }) => {
   let input
-  
+
   return (
     <div className="settings-container">
       <h2 className="settings-title">
@@ -12,11 +12,11 @@ const Settings = ({ onSubmit, cities, deleteCity, error, clearError }) => {
       <div>{cities ? cities.map((item, i) => {
         return (
           <div key={i} className="settings-city-container">
-            {item.current_observation.display_location.full}
             <button className="settings-delete-city"
               onClick={() => deleteCity(i)}>
               X
             </button>
+            {item.current_observation.display_location.full}
           </div>
         )
       }) : null}
@@ -36,7 +36,7 @@ const Settings = ({ onSubmit, cities, deleteCity, error, clearError }) => {
             input.value = ''
           }}
         >
-          Save New City
+          Save
         </button>
       </div>
       <div>{error ?
