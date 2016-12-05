@@ -1,12 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchCurrentLocationWeather, fetchPinnedLocationWeather } from '../actions/index'
+import { fetchCurrentLocationWeather, fetchPinnedLocationWeather, fetchSavedLocationWeather } from '../actions/index'
 import Header from '../containers/Header'
 
 class App extends Component {
   componentWillMount() {
     this.getCurrentLocation()
+
+    let zipArray = JSON.parse(localStorage.getItem('zips'))
+    if(zipArray === null){
+      zipArray = [];
+    }
+    if(zipArray.length > 0){
+      zipArray.forEach((zip)=>{
+        this.props.fetchSavedLocationWeather(zip);
+      });
+    }
   }
 
   getCurrentLocation() {
@@ -30,7 +40,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ fetchCurrentLocationWeather, fetchPinnedLocationWeather }, dispatch)
+  return bindActionCreators({ fetchCurrentLocationWeather, fetchPinnedLocationWeather, fetchSavedLocationWeather }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

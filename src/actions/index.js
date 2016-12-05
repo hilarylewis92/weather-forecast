@@ -41,6 +41,28 @@ export const fetchPinnedLocationWeather = ( zip ) => {
       .then(weather => weather.json())
       .then(json => {
         if (json.current_observation) {
+          let zipArray = JSON.parse(localStorage.getItem('zips'))
+          if(zipArray === null){
+            zipArray = [];
+          }
+          zipArray.push(json.current_observation.display_location.zip)
+          localStorage.setItem('zips', JSON.stringify(zipArray))
+
+          dispatch(recievePinnedLocationWeatherInfo(json))
+        } else {
+          dispatch(recieveInvalidZip(json.response.error.description))
+        }
+      }
+    )
+  }
+};
+
+export const fetchSavedLocationWeather = ( zip ) => {
+  return (dispatch) => {
+    return fetch(`https://api.wunderground.com/api/881631f063e09bd3/conditions/forecast10day/alerts/hourly10day/q/${zip}.json`)
+      .then(weather => weather.json())
+      .then(json => {
+        if (json.current_observation) {
           dispatch(recievePinnedLocationWeatherInfo(json))
         } else {
           dispatch(recieveInvalidZip(json.response.error.description))
