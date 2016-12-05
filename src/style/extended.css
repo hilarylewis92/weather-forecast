@@ -13,6 +13,7 @@
 }
 
 .extend-day-card{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   width: 150px;
   margin: 10px;
   border: 2px solid lightGrey;
@@ -67,18 +68,24 @@
 .hourly-container {
   margin: 2px;
   border: 2px solid lightGrey;
-  width: 200px;
+  width: 40px;
 }
 
-.hourly-temp, .hourly-time {
-  margin: 10px 0;
-  padding: 5px;
-  font-size: 20px;
-  display: inline-block;
+.hourly-time{
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 13px;
+  display: block;
+}
+
+.hourly-temp{
+  text-align: center;
+  margin-bottom: 5px;
+  display: block;
 }
 
 .hourly-image {
-  float: right;
-  margin-right: 5px;
-  display: inline-block;
+  height: 25px;
+  margin: auto;
+  display: block;
 }
