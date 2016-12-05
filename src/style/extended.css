@@ -10,6 +10,8 @@
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
+  color: black;
+  text-decoration: none;
 }
 
 .extend-day-card{
@@ -17,12 +19,14 @@
   margin: 10px;
   border: 2px solid lightGrey;
   padding: 10px;
+
 }
 
 .extend-weekday-header{
   border-bottom: 1px lightGrey;
   font-size: 15px;
   text-align: center;
+
 }
 
 .extend-weekday-dayname{
@@ -50,5 +54,26 @@
 }
 
 .extend-temp{
-  margin: 10px;
+  margin: 5px;
+}
+
+.hourly-container {
+  margin-left: 50px;
+  margin-top: 10px;
+  display:flex;
+  align-items: center;
+  border: 2px solid lightGrey;
+  width: 200px;
+}
+
+.hourly-temp {
+  margin-left: 20px;
+}
+
+.hourly-time {
+  margin-left: 10px;
+}
+
+.hourly-image {
+  margin-left:20px;
 }

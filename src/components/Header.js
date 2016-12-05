@@ -9,14 +9,14 @@ const Header = ({ name, temp, desc }) => {
         <h1 className="title"> Weather Dux </h1>
       </Link>
       <div className="current-weather">
+        <span className="current-location">
+        {name}
+        </span>
         <span className="current-desc">
           {desc}
         </span>
         <span className="current-temp">
           {temp}&deg;
-        </span>
-        <span className="current-location">
-          {name}
         </span>
       </div>
       <Link to={`/forecast/${-1}`} className="current-view-extended">

@@ -44,10 +44,10 @@ const ExtendedForecast = ({ local, pinned, params, children }) => {
                 />
                 <div className="extend-high-low-temp">
                   <span className="extend-temp">
-                    High: {item.high.fahrenheit}
+                    High: {item.high.fahrenheit}&deg;
                   </span>
                   <span className="extend-temp">
-                    Low: {item.low.fahrenheit}
+                    Low: {item.low.fahrenheit}&deg;
                   </span>
                 </div>
               </div>
