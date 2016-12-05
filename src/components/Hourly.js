@@ -26,25 +26,33 @@ const HourlyForecast = ({ local, pinned, params }) => {
   }
 
   sliceHourlyArray()
+  console.log(tempForecastArray[day][0])
 
   return (
-    <div className="hourly-card-container">
-      {tempForecastArray[day].map((hour, index) => {
-        return (
-          <div className="hourly-container" key={index}>
-            <span className="hourly-time">
-              {hour.FCTTIME.ampm === 'PM' && hour.FCTTIME.hour !== '12' ? +hour.FCTTIME.hour-12 : hour.FCTTIME.hour} {hour.FCTTIME.ampm}
-            </span>
-            <span className="hourly-condtion">
-              {hour.conditions}
-            </span>
-            <span className="hourly-temp">
-              {hour.temp.english}&deg;
-            </span>
-            <img className="hourly-image" src={hour.icon_url} />
-          </div>
-        )
-      })}
+    <div>
+      <div className='day'>
+        <span>{tempForecastArray[day][0].FCTTIME.weekday_name_unlang}, </span>
+        <span>{tempForecastArray[day][0].FCTTIME.month_name} </span>
+        <span>{tempForecastArray[day][0].FCTTIME.mday}</span>
+      </div>
+      <div className="hourly-card-container">
+        {tempForecastArray[day].map((hour, index) => {
+          return (
+            <div className="hourly-container" key={index}>
+              <span className="hourly-time">
+                {hour.FCTTIME.ampm === 'PM' && hour.FCTTIME.hour !== '12' ? +hour.FCTTIME.hour-12 : hour.FCTTIME.hour} {hour.FCTTIME.ampm}
+              </span>
+              <span className="hourly-condtion">
+                {hour.conditions}
+              </span>
+              <span className="hourly-temp">
+                {hour.temp.english}&deg;
+              </span>
+              <img className="hourly-image" src={hour.icon_url} />
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
