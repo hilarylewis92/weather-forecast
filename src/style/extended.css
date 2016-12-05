@@ -68,13 +68,14 @@
 .hourly-container {
   margin: 2px;
   border: 2px solid lightGrey;
-  width: 40px;
+  width: 50px;
+  padding: 5px;
 }
 
 .hourly-time{
   text-align: center;
   margin-bottom: 5px;
-  font-size: 13px;
+  font-size: 15px;
   display: block;
 }
 
@@ -85,7 +86,8 @@
 }
 
 .hourly-image {
-  height: 25px;
+  height: 30px;
+  width: 30px;
   margin: auto;
   display: block;
 }
