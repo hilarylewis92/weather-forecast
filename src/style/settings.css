@@ -15,15 +15,11 @@
 }
 
 .settings-delete-city{
-  margin-left: 10px;
-  font-size: 15px;
+  margin-right: 5px;
+  font-size: 25px;
   color: red;
   background: none;
   border: none;
-}
-
-.settings-city-name{
-
 }
 
 .settings-input-container{
@@ -36,10 +32,15 @@
 }
 
 .settings-save-city{
-  margin-left: 10px;
-  margin-right: 10px;
-  height: 25px;
-  background-color: green;
+  font-size: 18px;
+  margin: 15px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: MediumAquaMarine;
   border: none;
   color: white;
+}
+
+.settings-save-city:hover {
+  color: yellow;
 }

@@ -16,9 +16,6 @@ header {
 
 
 .home-logo{
-  /*animation-name: lotsOfFunkyDucks;*/
-  /*animation-duration: 0.5s;*/
-  /*animation-iteration-count: infinite;*/
   color: black;
   display: inline-block;
   float: left;
@@ -71,6 +68,10 @@ header {
   position: relative;
   margin: 40px 30px 0 0;
   color: white;
+}
+
+.current-view-extended:hover {
+  color: yellow;
 }
 
 @media (max-width: 800px) {
