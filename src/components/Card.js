@@ -6,7 +6,7 @@ const Card = ({ list, id }) => {
   return (
     <div className="pinned-city-card">
       {list[id] ?
-        <Link className="card-link-to-extend" to={`/forecast/${id}`}>
+        <Link className="pinned-city-link" to={`/forecast/${id}`}>
           <div>
             <h3 className="card-location">
               {list[id].current_observation.display_location.full}
@@ -15,7 +15,7 @@ const Card = ({ list, id }) => {
               src={list[id].current_observation.icon_url}
             />
             <span className="card-temp">
-              {list[id].current_observation.temp_f}
+              {list[id].current_observation.temp_f}&deg;
             </span>
             <span className="card-weather">
               {list[id].current_observation.weather}

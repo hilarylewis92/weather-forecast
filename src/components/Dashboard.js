@@ -8,7 +8,7 @@ const Dashboard = () => {
       <Card id={0} />
       <Card id={1} />
       <Card id={2} />
-      <Link to="/settings">
+      <Link className="edit-cities-link" to="/settings">
         Edit My Cities
       </Link>
     </div>

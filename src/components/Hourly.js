@@ -41,7 +41,7 @@ const HourlyForecast = ({ local, pinned, params }) => {
               {hour.conditions}
             </span>
             <span className='hourly-temp'>
-              {hour.temp.english}
+              {hour.temp.english}&deg;
             </span>
             <img className='hourly-image' src={hour.icon_url} />
           </div>

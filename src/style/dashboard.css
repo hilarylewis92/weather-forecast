@@ -16,12 +16,19 @@
   margin: 30px;
 }
 
+.pinned-city-link{
+  text-decoration: none;
+  color: black;
+}
+
 .card-location{
   margin: 10px;
+  margin-top: 15px;
   padding-bottom: 5px;
   text-align: center;
   border-bottom: 2px solid black;
   font-size: 26px;
+
 }
 
 .card-img{
@@ -44,17 +51,6 @@
   text-align: center;
 }
 
-.card-link-to-extend{
-  color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  padding: 10px;
-  background-color: teal;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-
 .card-link-to-settings{
   background-color: lightGrey;
   text-decoration: none;
@@ -70,6 +66,12 @@
 
 .card-text-box{
   color: white;
+  font-size: 26px;
   position: relative;
   top: 50px;
+}
+
+.edit-cities-link {
+  color: black;
+  font-size: 22px;
 }
