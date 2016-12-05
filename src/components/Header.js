@@ -20,7 +20,7 @@ const Header = ({ name, temp, desc }) => {
         </span>
       </div>
       <Link to={`/forecast/${-1}`} className="current-view-extended">
-        View Extended Forecast --&gt;
+        View Extended Forecast
       </Link>
     </header>
   )
